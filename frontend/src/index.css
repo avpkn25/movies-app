@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+body {
+  background: #0f0f10;
+  color: white;
+}
+
+input,
+textarea {
+  color: white;
+}
+
+select option {
+  color: black;
+}
