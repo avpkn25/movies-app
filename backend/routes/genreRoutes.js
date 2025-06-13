@@ -15,10 +15,8 @@ import {
 import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
 
 router.route("/").post(authenticate, authorizeAdmin, createGenre);
-router
-  .route("/:id")
-  .put(authenticate, authorizeAdmin, updateGenre)
-  .delete(authenticate, authorizeAdmin, deleteGenre)
-  .get(getGenre);
+router.route("/:id").delete(authenticate, authorizeAdmin, deleteGenre);
+router.route("/:id").put(authenticate, authorizeAdmin, updateGenre);
 router.route("/genres").get(getAllGenres);
+router.route("/:id").get(getGenre);
 export default router;
